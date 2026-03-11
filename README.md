@@ -47,17 +47,104 @@ A **production-quality Java desktop application** for university resource planni
 
 ## 📸 Application Screenshots
 
-<div align="center">
+### Authentication & Entry
 
-| Login | Admin Dashboard |
-|:-----:|:--------------:|
-| ![Login](docs/screenshots/login.png) | ![Admin Dashboard](docs/screenshots/admin-dashboard.png) |
+#### Login Page
+![Login Page](docs/screenshots/login.png)
 
-| Student Dashboard | Instructor Dashboard |
-|:-----------------:|:--------------------:|
-| ![Student Dashboard](docs/screenshots/student-dashboard.png) | ![Instructor Dashboard](docs/screenshots/instructor-dashboard.png) |
+*Secure login screen with username and password fields. Authenticates against auth_db with BCrypt password hashing. Dark mode toggle and Change Password link available.*
 
-</div>
+#### Login (Dark Mode)
+![Login Dark Mode](docs/screenshots/login-dark.png)
+
+*Same login interface in dark theme. Demonstrates theme customization for user preference.*
+
+#### Login Failed
+![Login Failed](docs/screenshots/login-failed.png)
+
+*Error dialog shown on invalid credentials. Clear feedback for authentication failures.*
+
+---
+
+### Admin Module
+
+#### Admin Dashboard (Active)
+![Admin Dashboard](docs/screenshots/admin-dashboard.png)
+
+*System Administration panel with STATUS: ACTIVE. User management (Add/Remove User, Reset Password), course/section CRUD, maintenance mode, and database backup/restore.*
+
+#### Admin Dashboard (Maintenance Mode)
+![Admin Maintenance Mode](docs/screenshots/admin-maintenance.png)
+
+*Dashboard with STATUS: MAINTENANCE MODE (ON). When enabled, non-admin write operations are blocked across the system.*
+
+#### Add User
+![Add User](docs/screenshots/add-user.png)
+
+*Dialog to create new users. Username, password, role (Admin/Instructor/Student), roll number, and program (e.g. CSE).*
+
+#### Remove User
+![Remove User](docs/screenshots/remove-user.png)
+
+*Search and select users to delete. Displays admin1, inst1, stu1, stu2, stu3. Red Delete Selected button for destructive action.*
+
+#### Reset Password (Admin)
+![Reset Password](docs/screenshots/reset-password.png)
+
+*Admin dialog to reset any user's password. Search/select user, enter new password. Uses BCrypt for secure storage.*
+
+#### Add Course
+![Add Course](docs/screenshots/add-course.png)
+
+*Create new courses with code (e.g. CS102), title, and credits. Save or cancel.*
+
+#### Remove Course
+![Remove Course](docs/screenshots/remove-course.png)
+
+*Select course from dropdown (e.g. CS101) and delete. Confirmation required.*
+
+#### Add Section
+![Add Section](docs/screenshots/add-section.png)
+
+*Create sections: select course, assign instructor, choose days (Mon–Fri), time slots (08:00–09:00), room, and capacity.*
+
+#### Remove Section
+![Remove Section](docs/screenshots/remove-section.png)
+
+*Select section to delete (e.g. CS101: Mon,Wed 10:00–11:00 inst1). Database backup/restore visible in background.*
+
+---
+
+### Student Module
+
+#### Student Dashboard — My Courses
+![Student My Courses](docs/screenshots/student-courses.png)
+
+*Enrolled courses with code, title, instructor, room. Actions: View Grades, Export Transcript, Drop Selected, Refresh.*
+
+#### Student Dashboard — My Timetable
+![Student Timetable](docs/screenshots/student-timetable.png)
+
+*Personal schedule with day/time, course, title, room, instructor. Refresh Timetable button.*
+
+---
+
+### Instructor Module
+
+#### Instructor Dashboard
+![Instructor Dashboard](docs/screenshots/instructor-dashboard.png)
+
+*Manage Sections and My Timetable tabs. Lists assigned sections with code, title, room, capacity. Open Gradebook and Refresh buttons.*
+
+#### Gradebook — Enter Grades
+![Gradebook Enter Grades](docs/screenshots/gradebook-enter.png)
+
+*Manage assessments, student list (Roll No, Name, Program). Enter grades by assessment, Save Grade, Import from CSV.*
+
+#### Gradebook — View Score Sheet
+![Gradebook View Scores](docs/screenshots/gradebook-view.png)
+
+*Select assessment to view scores. Load Scores, Export CSV, Show Average for analytics.*
 
 ---
 
