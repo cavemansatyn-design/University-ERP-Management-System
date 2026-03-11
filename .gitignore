@@ -1,0 +1,39 @@
+# Build outputs
+out/
+target/
+build/
+bin/
+*.class
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.kotlin
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Gradle
+.gradle/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local config - never commit real credentials
+config/config.properties
+
+# Backups (if generated at root)
+backups/

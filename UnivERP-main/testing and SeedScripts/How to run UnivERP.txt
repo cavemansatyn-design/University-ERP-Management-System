@@ -1,0 +1,88 @@
+UniV-ERP: How to Run Guide
+
+1. Prerequisites and Environment Setup
+To run the UniV-ERP application, ensure the required software and environment configurations are in place. The application is developed using Java and built within IntelliJ IDEA. The project configuration indicates the use of JDK. A MySQL server installation is required along with the MySQL Connector/J driver for database communication.
+
+Required software:
+- Java Development Kit
+- MySQL Server
+- MySQL Connector/J
+- IntelliJ 
+
+2. Database Configuration
+UniV-ERP uses a two-database structure to maintain a separation between authentication data and academic data.
+
+Database: auth_db
+Purpose: Stores authentication and security data including usernames, BCrypt-hashed passwords, and roles.
+Create schema named auth_db in local database.
+Credentials: user=root, pass=<your pass for mySQL>
+
+Database: erp_db
+Purpose: Stores application data including students, instructors, courses, sections, enrollments, grades, and maintenance settings.
+Create schema named auth_db in local database.
+Credentials: user=root, pass=<your pass for mySQL>
+
+Before running the application, execute the SQL schema to create all required tables such as users_auth, courses, sections, enrollments, grades, and settings.
+
+3. Application Components
+The UniV-ERP application follows a layered structure.
+
+Data Access Layer (edu.univ.erp.data):
+Contains DAO classes for Admin, Student, Instructor, Course, and Notifications. These classes execute SQL statements and interact with the dual-database setup.
+
+Authentication and Utilities (edu.univ.erp.auth, edu.univ.erp.util):
+Includes PasswordUtil for BCrypt hashing and AuthService for login handling.
+
+Access Control (edu.univ.erp.access):
+Implements checks related to maintenance mode and role restrictions.
+
+User Interface (edu.univ.erp.ui):
+Provides all role-specific dashboards and dialogs including LoginWindow, AdminDashboard, InstructorDashboard, AddUserDialog, and GradebookWindow.
+
+Main Class:
+edu.univ.erp.Main initializes the application, applies the FlatLaf theme, and displays the login interface.
+
+4. Default Credentials
+For testing, the application should include the following seed users with hashed passwords stored in auth_db.
+
+Role: Admin
+Username: admin1
+Password: pass123
+
+Role: Instructor
+Username: inst1
+Password: pass123
+
+Role: Student
+Username: stu1
+Password: pass123
+
+Role: Student
+Username: stu2
+Password: pass123
+
+5. Execution Instructions
+Compile:
+Compile all Java files located in the src directory into the out directory if using manual compilation. IntelliJ will handle compilation automatically when running through the IDE.
+
+Run:
+Execute the edu.univ.erp.Main class. Once launched, the LoginWindow will appear and allow authentication using the default credentials.
+
+After logging in:
+Admins may create users, manage courses, and toggle maintenance mode.
+Instructors may view sections assigned to them and manage the gradebook.
+Students may enroll in or drop sections and view schedules and grades.
+
+Ensure that both databases are running and accessible at the configured JDBC URLs before launching the application.
+
+6. Important Configuration Steps Before First Run
+Before running the UniV-ERP application for the first time, you must update the database credentials inside the configuration file used by the project. The MySQL username and password in the config must match your local MySQL setup; otherwise, the application will not be able to connect to either auth_db or erp_db. Configuration file is located in UnivERP/config.properties change the host name and password accordingly for your local database.
+
+After updating the credentials, you must run the database connector test or any file in the project that is responsible for establishing the first database connection. This step ensures that both databases are reachable and the configuration is correct. Only after this initial run should the main application be launched.
+
+In addition to this, the system includes a DefaultPassReset Script which must be run to reset the password to pass123. This value is used whenever an admin resets a user's password through the interface. The reset operation assigns this default password, after which the user is expected to update their password. Make sure this value is set appropriately in the configuration before testing password reset features.
+
+
+If these steps are not performed, you may encounter connection failures, login issues, or errors when performing user authentication and password reset operations.
+
+

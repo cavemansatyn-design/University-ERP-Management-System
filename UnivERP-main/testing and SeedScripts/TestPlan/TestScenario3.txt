@@ -1,0 +1,9 @@
+Test Suite 3: Catalog, Roster, and Grade Functionality
+(This file validates catalog display, transcript export, instructor roster, and grading.)
+
+3.1 Student views catalog. Columns load correctly. PASS
+3.2 Student exports transcript. File downloads. PASS
+3.3 Instructor sees only assigned sections. PASS
+3.4 Instructor opens gradebook. Roster loads. PASS
+3.5 Instructor enters grade. Saved successfully. PASS
+3.6 Instructor tries accessing another instructor's section. Blocked. FAIL

@@ -1,0 +1,10 @@
+Test Suite 2: Data Integrity and Capacity Limits
+(This file contains capacity, duplicate enrollment, and seat recycling tests.)
+
+2.1 stu1 sees TEST-101 seat = 1. PASS
+2.2 stu1 registers successfully. PASS
+2.3 stu1 attempts duplicate registration. Expected: blocked. FAIL
+2.4 stu2 attempts registration (section full). Expected: blocked. FAIL
+2.5 stu2 signs out. PASS
+2.6 stu1 drops TEST-101. PASS
+2.7 stu2 registers after seat frees. PASS

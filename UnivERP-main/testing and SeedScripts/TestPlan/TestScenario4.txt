@@ -1,0 +1,13 @@
+Test Suite 4: Admin Control and Data Management
+(This file contains course creation, section creation, backup/restore, and admin operations.)
+
+4.1 Admin opens Course Management. PASS
+4.2 Admin creates course CS105. PASS
+4.3 Admin creates and assigns section. PASS
+4.4 Admin enables Maintenance Mode. PASS
+4.5 Student attempts registration. Blocked. FAIL
+4.6 Admin disables Maintenance Mode. PASS
+4.7 Admin performs DB backup. PASS
+4.8 Admin deletes stu2. PASS
+4.9 Admin restores backup. PASS
+4.10 stu2 reappears after restore. PASS

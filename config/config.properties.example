@@ -1,0 +1,11 @@
+# MySQL Database Configuration
+# Copy this file to config.properties and update with your credentials.
+# --- AUTH DB ---
+auth.db.url=jdbc:mysql://localhost:3306/auth_db
+auth.db.user=root
+auth.db.pass=your_password
+
+# --- ERP DB ---
+erp.db.url=jdbc:mysql://localhost:3306/erp_db
+erp.db.user=root
+erp.db.pass=your_password

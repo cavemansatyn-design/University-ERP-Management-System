@@ -1,0 +1,27 @@
+UniV-ERP Test Summary Report
+
+1. Overview
+This document provides a consolidated summary of all test suites executed for the UniV-ERP system. It includes total counts of passed and failed steps, along with reasons for each failure. Failures noted below are intentional outcomes triggered by system rules such as maintenance restrictions, capacity limits, duplicate enrollment checks, and access control validations.
+
+2. Summary of Results
+Total Passed: 25
+Total Failed: 6
+
+3. Failure Breakdown and Reasons
+
+Test Suite 1: System Control and Maintenance Mode
+- Step 1.4 FAILED: Student attempted to register during Maintenance Mode. The system correctly blocked the action.
+- Step 1.5 FAILED: Student attempted to drop a course during Maintenance Mode. The system correctly blocked the action.
+
+Test Suite 2: Data Integrity and Capacity Limits
+- Step 2.3 FAILED: Student attempted duplicate registration. System blocked the action to maintain integrity.
+- Step 2.4 FAILED: Student attempted to register for a section with no available seats. System enforced capacity rules.
+
+Test Suite 3: Catalog, Roster, and Grade Functionality
+- Step 3.6 FAILED: Instructor attempted to access a section not assigned to them. System blocked access due to role and ownership restrictions.
+
+Test Suite 4: Admin Control and Data Management
+- Step 4.5 FAILED: Student attempted to register for CS105 while Maintenance Mode was enabled. System blocked write operations during maintenance.
+
+4. Conclusion
+All failed tests reflect correct enforcement of system logic rather than system malfunction. The UniV-ERP application behaves as intended, preventing invalid operations while allowing valid actions to complete successfully. This summary confirms that system rules for maintenance, data integrity, access control, and capacity management are functioning reliably.

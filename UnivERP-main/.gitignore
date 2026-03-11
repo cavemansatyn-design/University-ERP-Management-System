@@ -1,0 +1,14 @@
+.idea/
+*.iws
+*.iml
+*.ipr
+
+
+out/
+target/
+build/
+.gradle/
+
+# OS junk
+.DS_Store
+Thumbs.db
